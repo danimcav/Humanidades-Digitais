@@ -1,4 +1,4 @@
-# Análise de Texto - Folha 8
+# Análise de Texto - Folha 8 Final
 
 Este código em Python realiza uma análise básica de um arquivo de texto chamado "folha8.OUT.txt". Ele oferece funcionalidades para contagem de publicações, extração de tags do texto e geração de gráficos baseados nas classes gramaticais das palavras presentes nessas tags.
 
