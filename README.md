@@ -1,22 +1,31 @@
-# Humanidades-Digitais
-# Folha 8 - Análise de Texto
+# Análise de Texto - Folha 8
 
-## Descrição
-Este projeto consiste em um conjunto de scripts em Python para análise de texto do arquivo "folha8.OUT.txt". Ele realiza diversas tarefas, incluindo contagem de publicações, extração de tags e análise das classes gramaticais das palavras presentes nessas tags.
+Este código em Python realiza uma análise básica de um arquivo de texto chamado "folha8.OUT.txt". Ele oferece funcionalidades para contagem de publicações, extração de tags do texto e geração de gráficos baseados nas classes gramaticais das palavras presentes nessas tags.
 
-## Tarefas Realizadas
+## Funcionalidades
 
-### Exercício #1: Contagem de Publicações
-O script realiza a contagem do número total de publicações na base de dados.
+1. **Leitura do Arquivo Fonte**
+    - A função `le_arquivo_fonte(nomearquivo)` lê o conteúdo do arquivo especificado.
+   
+2. **Quebra por Matérias**
+    - A função `quebra_por_materias(folha)` separa o texto em matérias, utilizando o marcador "<pub>" como referência.
 
-### Exercício #2: Extração de Tags
-As tags são extraídas do texto, com destaque para aquelas presentes entre chaves `{}`.
+3. **Exercício #1: Contagem de Publicações**
+    - A função `exercicio_01(lista_materias)` calcula o total de matérias presentes no arquivo.
 
-### Exercício #3: Contagem de Tags
-A contagem e a frequência das tags são calculadas.
+4. **Exercício #2: Extração das Tags**
+    - A função `extrair_tags(materia)` extrai as tags presentes em cada matéria usando expressões regulares.
 
-### Exercício #4: Análise de Classes Gramaticais
-As classes gramaticais das palavras presentes nas tags `{}` são identificadas e suas frequências são visualizadas em um gráfico de barras.
+5. **Exercício #3: Contagem das Tags**
+    - A função `calcular_contagem_tags(materias)` calcula e exibe a contagem das tags presentes no texto.
+
+6. **Exercício #4: Análise de Classes Gramaticais**
+    - O código utiliza a biblioteca spaCy para analisar as classes gramaticais das palavras presentes nas tags. No entanto, detalhes específicos sobre a geração do gráfico baseado nessas classes não foram implementados.
+
+## Uso
+
+1. Certifique-se de ter o arquivo `folha8.OUT.txt` no mesmo diretório que o script.
+2. Execute o script Python para analisar o arquivo e obter as informações desejadas.
 
 ## Pré-requisitos
 - Python 3.x
@@ -30,17 +39,7 @@ As classes gramaticais das palavras presentes nas tags `{}` são identificadas e
     ```
     pip install -r requirements.txt
     ```
-
-## Uso
-1. Certifique-se de ter o arquivo `folha8.OUT.txt` no diretório do projeto.
-2. Execute o script principal `analise_texto.py`:
-
-    ```
-    python analise_texto.py
-    ```
-
-3. O script realizará a análise do texto e exibirá um gráfico mostrando a frequência das classes gramaticais das palavras presentes nas tags `{}`.
-
+    
 ## Estrutura do Projeto
 - `folha8.OUT.txt`: Arquivo de texto a ser analisado.
 - `analise_texto.py`: Script principal para análise do texto.
