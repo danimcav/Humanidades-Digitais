@@ -10,8 +10,16 @@ fo = open("saida.txt", "w", encoding = "utf-8")
 def proc_article(html):
     #print (len(html)) #está a contar os carateres de cada artigo
     a=bs(html) # cria uma árvore documental
+    cabecalho = ""
+    for meta in a.find_all("meta"):
+        p = meta.get("property")
+        if p is None:
+            continue
+        p = p.replace("og:", "")
+        cabecalho+= f"{p}:{meta.get('content')}\n"
+        print(p, ":" , meta.get("content"))
     art= a.find("div", id="artigo") #procura no html
-    print ("=========\n", art.get_text(), file = fo) #get_text - Retira apenas o texto mesmo, sem html
+    print ("=========\n", cabecalho, art.get_text(), file)
 
 for file in ats:
     with open(file, encoding="utf-8") as f:
