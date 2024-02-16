@@ -5,11 +5,13 @@ from bs4 import BeautifulSoup as bs
 ats= glob("nos_1146_1149/Article.aspx*")
 print (ats)
 
+
+fo = open("saida.txt", "w", encoding = "utf-8")
 def proc_article(html):
     #print (len(html)) #está a contar os carateres de cada artigo
     a=bs(html) # cria uma árvore documental
     art= a.find("div", id="artigo") #procura no html
-    print ("=========\n", art.get_text()) #get_text - Retira apenas o texto mesmo, sem html
+    print ("=========\n", art.get_text(), file = fo) #get_text - Retira apenas o texto mesmo, sem html
 
 for file in ats:
     with open(file, encoding="utf-8") as f:
